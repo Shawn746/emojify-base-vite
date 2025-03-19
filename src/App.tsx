@@ -182,7 +182,8 @@ export default function App() {
   // 应用单个目标
   const applyToTarget = async (id: string, noEmit: boolean = false) => {
     const currentData = targetData[target];
-    const originalName = currentData.find((t) => t.id === id)?.name || "";
+    // @ts-ignore
+    const originalName = currentData?.find((t: any) => t.id === id)?.name || "";
     const emojiData = targetEmojiData[target].find((d) => d.id === id);
     if (!emojiData) return;
 
