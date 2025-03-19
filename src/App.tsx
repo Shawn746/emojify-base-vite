@@ -393,6 +393,7 @@ export default function App() {
         <Button
           theme="solid"
           loading={loading}
+          disabled={isEmpty(targetData[target])}
           onClick={handleEmojify}
           style={{
             marginBottom: 12,
