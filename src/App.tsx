@@ -137,10 +137,13 @@ export default function App() {
       return finalResult;
     } catch (error) {
       // Notification.error({ content: "服务调用失败" });
+      console.log(error, 'error');
       await bitable.ui.showToast({
         toastType: ToastType.error,
         message: "服务调用失败",
       });
+    } finally {
+      setLoading(false);
     }
   };
 
